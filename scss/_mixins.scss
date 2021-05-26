@@ -1,0 +1,62 @@
+@mixin d-flex($d, $jc, $ai) {
+    display: $d;
+    -webkit-box-pack: $jc;
+    -ms-flex-pack: $jc;
+    justify-content: $jc;
+    -webkit-box-align: $ai;
+    -ms-flex-align: $ai;
+    align-items: $ai;
+}
+
+@mixin ie11 {
+
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+@mixin scrollbar {
+
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: #d6d6d6 $w;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: $w;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: $very-light-gray;
+        border-radius: 1rem;
+        border: .3rem solid $w;
+    }
+}
+
+@mixin screenOrientation($orientation) {
+    @media(orientation: $orientation) {
+        @content;
+    }
+}
+
+@mixin breakpoint($screen) {
+    @media(min-width: $screen) {
+        @content;
+    }
+}
+
+@mixin pos-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+}

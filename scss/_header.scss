@@ -1,0 +1,195 @@
+.header {
+    position: relative;
+
+    background: {
+        color: $very-light-red;
+        image: linear-gradient($very-light-red, $light-red);
+        size: cover;
+    }
+
+    border-radius: 0 0 0 12rem;
+    overflow: hidden;
+    height: 100%;
+    min-height: 90vh;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: {
+            image: url("../images/bg-pattern-intro.svg");
+            size: 160rem;
+            position: 34% 38%;
+            repeat: no-repeat;
+        }
+
+        opacity: .6;
+    }
+
+    &__content {
+        @include pos-center;
+        width: 100%;
+        color: $w;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    &__heading {
+        margin-bottom: 2.5rem;
+    }
+
+    &__btn {
+        width: 13rem;
+        height: 4rem;
+        margin: .5rem auto;
+        border-radius: 2rem;
+        @include d-flex(flex, center, center);
+        cursor: pointer;
+        outline: none;
+        border: 1px solid transparent;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+
+        @include ie11 {
+            padding-top: .5rem;
+        }
+
+        &--fourth {
+
+            &:active,
+            &:hover {
+                font-weight: 700;
+            }
+        }
+
+        &--tertiary {
+            color: $w;
+            background: -webkit-gradient(linear, left top, right top, from($very-light-red), to($light-red));
+            background: linear-gradient(to right, $very-light-red, $light-red);
+        }
+
+
+
+        &--primary,
+        &--secondary {
+            display: -webkit-inline-box;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            margin: 4rem 1rem 0;
+        }
+
+        &--primary,
+        &--secondary,
+        &--tertiary {
+            -webkit-transition: background .2s linear,
+                color .2s linear;
+            transition: background .2s linear,
+                color .2s linear;
+        }
+
+
+        &--primary,
+        &--secondary:active,
+        &--secondary:hover {
+            background: $w;
+            color: $light-red;
+            font-weight: 700;
+        }
+
+        &--secondary {
+            border-color: $w;
+        }
+
+        &--primary:active,
+        &--primary:hover {
+            color: $w;
+            background: $primary-cta;
+            font-weight: 300;
+        }
+    }
+
+
+    @include breakpoint(56.25em) {
+        min-height: 60rem;
+        background-image: -webkit-gradient(linear, left top, right top, from($very-light-red), to($light-red));
+        background-image: linear-gradient(to right, $very-light-red, $light-red);
+
+        &::before {
+            background: {
+                size: 280rem auto;
+                position: 20% -110rem;
+            }
+
+            opacity: 1;
+        }
+
+        &__heading {
+            font-size: 5rem;
+        }
+
+        &__paragraph {
+            font-size: 1.8rem;
+        }
+
+        &__btn {
+            &--fourth {
+                color: $w;
+
+                &:hover {
+                    font-weight: 300;
+                }
+            }
+
+            &--tertiary {
+                background: $w;
+                color: $light-red;
+                font-weight: 700;
+
+                &:hover,
+                &:active {
+                    color: $w;
+                    background: $primary-cta;
+                    font-weight: 300;
+                }
+            }
+
+            &--outline {
+                @include breakpoint(56.25em) {
+                    display: inline-block;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: -.1rem;
+                        left: 0;
+                        width: 100%;
+                        height: .1rem;
+                        background: rgba($w, .5);
+                        -webkit-transform-origin: left;
+                        transform-origin: left;
+                        -webkit-transform: scaleX(0);
+                        transform: scaleX(0);
+                        -webkit-transition: -webkit-transform .3s ease;
+                        transition: -webkit-transform .3s ease;
+                        transition: transform .3s ease;
+                        transition: transform .3s ease, -webkit-transform .3s ease;
+                    }
+
+                    &:hover,
+                    &:active {
+                        &::before {
+                            -webkit-transform: scaleX(1);
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,261 @@
+.navigation {
+    position: fixed;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 10rem;
+    padding: 7rem 0 3rem;
+    @include d-flex(flex, space-between, flex-start);
+    font-weight: 600;
+    z-index: 9;
+
+
+
+    &__inner {
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transform: scale(0) translateX(-50%);
+        transform: scale(0) translateX(-50%);
+        background-color: $w;
+        border-radius: 1rem;
+        position: absolute;
+        top: 14rem;
+        width: 100%;
+        left: 50%;
+        height: auto;
+        max-height: calc(75vh - 7rem);
+        overflow-y: auto;
+        -webkit-transform-origin: left center;
+        transform-origin: left center;
+        padding: 3rem;
+        -webkit-box-shadow: 0 1rem 2rem rgba(black, .3);
+        box-shadow: 0 1rem 2rem rgba(black, .3);
+
+        &--active {
+            visibility: visible;
+            -webkit-transform: scale(1) translateX(-50%);
+            transform: scale(1) translateX(-50%);
+            opacity: 1;
+        }
+    }
+
+    &__item {
+        color: $very-dark-blue;
+        padding: 1rem 0;
+        text-align: center;
+        cursor: pointer;
+
+
+        &:hover,
+        &:active {
+            span {
+                font-weight: 700;
+            }
+        }
+
+        svg {
+            stroke: $light-red;
+            margin-left: .5rem;
+            -webkit-transition: -webkit-transform .3s ease;
+            transition: -webkit-transform .3s ease;
+            transition: transform .3s ease;
+            transition: transform .3s ease, -webkit-transform .3s ease;
+        }
+
+        &--active {
+            svg {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+
+            .navigation__submenu {
+                max-height: 40rem;
+                padding: 1rem 0;
+            }
+        }
+    }
+
+    &__item--active,
+    &__submenu-link {
+        color: $very-dark-grayish-blue;
+    }
+
+    &__menu {
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+
+
+        div {
+            position: absolute;
+            background: $w;
+            width: 100%;
+            height: .3rem;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: .3s;
+            transition: .3s;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                left: 0;
+            }
+
+            &:nth-of-type(4) {
+                right: 0;
+            }
+
+            &:nth-of-type(1) {
+                top: 20%;
+            }
+
+            &:nth-of-type(2) {
+                top: 50%;
+            }
+
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                width: 50%;
+                top: 80%;
+            }
+        }
+
+        &--active {
+            div {
+                &:nth-of-type(1) {
+                    top: 50%;
+                    -webkit-transform: translateY(-50%) rotate(45deg);
+                    transform: translateY(-50%) rotate(45deg);
+                }
+
+                &:nth-of-type(2) {
+                    top: 50%;
+                    -webkit-transform: translateY(-50%) rotate(-45deg);
+                    transform: translateY(-50%) rotate(-45deg);
+                }
+
+                &:nth-of-type(3) {
+                    left: -50%;
+                    opacity: 0;
+                }
+
+                &:nth-of-type(4) {
+                    right: -50%;
+                    opacity: 0;
+                }
+            }
+
+        }
+    }
+
+    &__submenu {
+        overflow: hidden;
+        height: auto;
+        margin-top: 1.5rem;
+        max-height: 0;
+        background: $very-light-gray;
+        border-radius: .7rem;
+        -webkit-transition: max-height .6s ease, padding .3s linear;
+        -webkit-transition: max-height .6s ease, padding .3s linear;
+        transition: max-height .6s ease, padding .3s linear;
+    }
+
+    &__submenu-link {
+        padding: 1rem 0;
+        display: block;
+        -webkit-transition: background .3s linear;
+        transition: background .3s linear;
+
+        &:hover {
+            background: $grayish-blue;
+        }
+    }
+
+    &__login {
+        border-top: .1rem solid $grayish-blue;
+        margin-top: 1rem;
+        padding-top: 2rem;
+    }
+
+    @include breakpoint(56.25em) {
+        height: 34rem;
+        min-height: 34rem;
+
+        &__inner {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: none;
+            transition: none;
+            position: static;
+            -webkit-transform: none;
+            transform: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            background: transparent;
+            padding: 0 0 0 5rem;
+            @include d-flex(flex, space-between, flex-start);
+            overflow-y: inherit;
+        }
+
+        &__left,
+        &__login {
+            @include d-flex(flex, null, null);
+        }
+
+        &__item {
+            color: $w;
+            text-align: left;
+            width: 13.5rem;
+
+            svg {
+                stroke: $w;
+            }
+
+            &:hover,
+            &:active {
+                span {
+                    font-weight: 300;
+                }
+            }
+        }
+
+        &__submenu {
+            margin-top: 1rem;
+            position: absolute;
+            width: 12rem;
+            -webkit-backdrop-filter: blur(.6rem);
+            backdrop-filter: blur(.6rem);
+            -webkit-box-shadow: 0 1rem 2rem rgba(black, .2);
+            box-shadow: 0 1rem 2rem rgba(black, .2);
+
+            @supports ((-webkit-backdrop-filter: blur(.6rem)) or (backdrop-filter: blur(.6rem))) {
+                background: rgba($w, .6);
+            }
+        }
+
+        &__submenu-link {
+            font-size: 1.5rem;
+            padding-left: 1.5rem;
+
+            &:hover,
+            &:active {
+                background: none;
+                font-weight: 700;
+            }
+        }
+
+        &__login {
+            margin-top: 0;
+            border: none;
+            padding: 0;
+        }
+
+        &__menu {
+            display: none;
+        }
+    }
+}

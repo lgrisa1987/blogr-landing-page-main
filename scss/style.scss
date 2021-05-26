@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600,700display=swap');
+@import "variables";
+@import "mixins";
+@import "header";
+@import "navigation";
+
+@include scrollbar;
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    font-weight: 300;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font: {
+        size: 1.6rem;
+        family: 'Overpass',
+            sans-serif;
+    }
+
+    opacity: 0;
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 110rem;
+    margin: auto;
+}

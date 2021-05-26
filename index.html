@@ -1,73 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | [Blogr]</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/webfont.js"></script>
+  <script src="./js/script.js" defer></script>
 </head>
+
 <body>
-  Product
 
-  Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations
+  <header class="header">
+    <nav class="navigation container">
+      <img src="./images/logo.svg" alt="Blogr" class="navigation__logo">
+      <div class="navigation__inner">
+        <ul class="navigation__left">
+          <li class="navigation__item">
+            <span class="header__btn--outline">Product</span> <svg xmlns="http://www.w3.org/2000/svg" width="10"
+              height="7">
+              <path fill="none" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" /></svg>
+            <ul class="navigation__submenu">
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Overview</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Pricing</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Marketplace</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Features</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Integrations</a></li>
+            </ul>
+          <li class="navigation__item">
+            <span class="header__btn--outline">Company</span> <svg xmlns="http://www.w3.org/2000/svg" width="10"
+              height="7">
+              <path fill="none" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" /></svg>
+            <ul class="navigation__submenu">
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">About</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Team</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Blog</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Careers</a></li>
+            </ul>
+          <li class="navigation__item">
+            <span class="header__btn--outline">Connect</span> <svg xmlns="http://www.w3.org/2000/svg" width="10"
+              height="7">
+              <path fill="none" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" /></svg>
+            <ul class="navigation__submenu">
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Contact</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">Newsletter</a></li>
+              <li class="navigation__submenu-item"><a href="#" class="navigation__submenu-link">LinkedIn</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="navigation__login">
+          <a href="#" class="header__btn header__btn--fourth"><span class="header__btn--outline">Log In</span></a>
+          <a href="#" class="header__btn header__btn--tertiary">Sign Up</a>
+        </div>
+      </div>
 
-  Company
+      <div class="navigation__menu">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+    <div class="header__content">
+      <h1 class="header__heading">A modern publishing platform</h1>
+      <p class="header__paragraph">Grow your audience and build your online brand</p>
+      <a href="#" class="header__btn header__btn--primary">Start for Free</a>
+      <a href="#" class="header__btn header__btn--secondary">Learn More</a>
+    </div>
+  </header>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section__heading">Designed for the future</h2>
+        <div class="section__content">
+          <div class="section__image" role="img" aria-label="Designed for the future"></div>
+          <div class="section__copy-container">
+            <h3 class="section__subheading">Introducing an extensible editor</h3>
+            <p class="section__paragraph">Blogr features an exceedingly intuitive interface which lets you focus on one
+              thing: creating content.
+              The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
+              videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.</p>
+            <h3 class="section__subheading">Robust content management</h3>
+            <p class="section__paragraph">Flexible content management enables users to easily move through posts.
+              Increase
+              the usability of your blog
+              by adding customized categories, sections, format, or flow. With this functionality, you’re in full
+              control.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  About
-  Team
-  Blog
-  Careers
 
-  Connect
 
-  Contact
-  Newsletter
-  LinkedIn
+  <!-- 
   
-  Login
-  Sign Up
 
-  A modern publishing platform
-  Grow your audience and build your online brand
-
-  Start for Free
-  Learn More
-
-  Designed for the future
-
-  Introducing an extensible editor
-  Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
-  The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
-  videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
-  change the looks of a blog.
-
-  Robust content management
-  Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+  
+  Flexible content management enables users to easily move through posts. Increase the usability of your blog
   by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
 
   State of the Art Infrastructure
-  With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+  With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
   This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
 
   Free, open, simple
-  Blogr is a free and open source application backed by a large community of helpful developers. It supports 
-  features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
+  Blogr is a free and open source application backed by a large community of helpful developers. It supports
+  features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
   and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
 
   Powerful tooling
-  Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+  Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze,
+  but
   capable of producing even the most complicated sites.
 
   Product
@@ -86,14 +135,11 @@
   Careers
 
   Connect
-  
+
   Contact
   Newsletter
-  LinkedIn
+  LinkedIn -->
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
+
 </html>
