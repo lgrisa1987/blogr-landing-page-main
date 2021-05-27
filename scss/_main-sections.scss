@@ -1,0 +1,73 @@
+.section {
+    padding: 8rem 0;
+    text-align: center;
+    color: $very-dark-blue;
+    max-width: 192rem;
+    margin: auto;
+
+    &__copy-container {
+        padding: 0 2rem;
+    }
+
+    &__heading,
+    &__subheading {
+        font: {
+            weight: 600;
+        }
+
+        line-height: 1.2;
+    }
+
+    &__paragraph {
+        color: $very-dark-grayish-blue;
+        margin-top: 2rem;
+        line-height: 1.4;
+    }
+
+    &__img-mobile {
+        max-width: 55rem;
+        margin: auto;
+    }
+
+    &__img-mobile,
+    &__subheading {
+        margin-top: 5rem;
+    }
+
+    @include breakpoint(56.25em) {
+        padding: 13rem 0;
+
+        &--1 {
+            background: url(../images/illustration-editor-desktop.svg) no-repeat;
+            background-position: calc(100vw - 45rem) center;
+            background-size: 65rem auto;
+        }
+
+        &__img-mobile {
+            display: none;
+        }
+
+        &__heading {
+            font-size: 3.2rem;
+        }
+
+        &__copy-container {
+            text-align: left;
+            width: 50%;
+            padding-top: 3rem;
+        }
+    }
+
+    @include breakpoint(90em) {
+        &--1 {
+            background-position-x: calc(100vw - 65rem);
+        }
+    }
+
+    @include breakpoint(120em) {
+        &--1 {
+            background-position-x: right;
+        }
+    }
+
+}

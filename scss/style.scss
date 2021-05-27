@@ -3,6 +3,7 @@
 @import "mixins";
 @import "header";
 @import "navigation";
+@import "main-sections";
 
 @include scrollbar;
 
@@ -35,6 +36,10 @@ body {
     &.show {
         opacity: 1;
     }
+}
+
+img {
+    max-width: 100%;
 }
 
 ul {
