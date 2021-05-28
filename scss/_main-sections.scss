@@ -21,17 +21,72 @@
     &__paragraph {
         color: $very-dark-grayish-blue;
         margin-top: 2rem;
-        line-height: 1.4;
+        line-height: 2;
     }
 
     &__img-mobile {
         max-width: 55rem;
         margin: auto;
+
+        &--show {
+            max-width: 40rem;
+
+            img {
+                margin-top: -18rem;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
     }
 
     &__img-mobile,
     &__subheading {
         margin-top: 5rem;
+    }
+
+    &--2 {
+        background: $very-dark-gray-blue;
+        background-image: -webkit-gradient(linear, left top, left bottom, from($very-dark-gray-blue), to($very-dark-desaturated-blue));
+        background-image: linear-gradient($very-dark-gray-blue, $very-dark-desaturated-blue);
+        border-radius: 0 12rem 0 12rem;
+        padding: 0 0 12rem;
+        margin-top: 18rem;
+        position: relative;
+        margin-bottom: 20rem;
+        max-width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../images/bg-pattern-circles.svg) no-repeat;
+            background-size: 50rem auto;
+            border-radius: 0 12rem 0 12rem;
+            background-position: center -15rem;
+            z-index: 0;
+            opacity: .5;
+        }
+
+    }
+
+    &__heading--alt {
+        line-height: 1.3;
+
+        @include breakpoint(23.438em) {
+            font-size: 3.2rem;
+        }
+    }
+
+    &__heading--alt,
+    &__paragraph--alt {
+        color: $w;
+        font-weight: 300;
     }
 
     @include breakpoint(56.25em) {
@@ -40,11 +95,37 @@
         &--1 {
             background: url(../images/illustration-editor-desktop.svg) no-repeat;
             background-position: calc(100vw - 45rem) center;
-            background-size: 65rem auto;
+            background-size: 50rem auto;
+        }
+
+        &--2 {
+            padding: 0;
+            max-height: 40rem;
+
+            &::before {
+                background-size: 80rem auto;
+                background-position: 25rem bottom;
+            }
         }
 
         &__img-mobile {
             display: none;
+
+            &--show {
+                display: block;
+                max-width: 100%;
+                margin-right: 5rem;
+
+                img {
+                    margin-top: -10rem;
+                    height: 54rem;
+                }
+            }
+        }
+
+        &__content--alt {
+            @include d-flex(flex, center, center);
+            max-height: 40rem;
         }
 
         &__heading {
@@ -61,6 +142,7 @@
     @include breakpoint(90em) {
         &--1 {
             background-position-x: calc(100vw - 65rem);
+            background-size: 65rem auto;
         }
     }
 
