@@ -70,7 +70,7 @@
             border-radius: 0 12rem 0 12rem;
             background-position: center -15rem;
             z-index: 0;
-            opacity: .5;
+            opacity: .75;
         }
 
     }
@@ -100,11 +100,12 @@
 
         &--2 {
             padding: 0;
+            margin-top: 10rem;
             max-height: 40rem;
 
             &::before {
                 background-size: 80rem auto;
-                background-position: 25rem bottom;
+                background-position: calc(50vw - 65rem) bottom;
             }
         }
 

@@ -80,7 +80,7 @@
             display: -webkit-inline-box;
             display: -ms-inline-flexbox;
             display: inline-flex;
-            margin: 4rem 1rem 0;
+            margin: 2rem 1rem 0;
         }
 
         &--primary,
@@ -110,6 +110,16 @@
             color: $w;
             background: $primary-cta;
             font-weight: 300;
+        }
+    }
+
+    @include breakpoint(23.438em) {
+        &__btn {
+
+            &--primary,
+            &--secondary {
+                margin-top: 4rem;
+            }
         }
     }
 

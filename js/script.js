@@ -1,6 +1,7 @@
 "use strict";
 
 var Blogr = function () {
+    this.navigation = document.querySelector('.navigation');
     this.navigationMenu = document.querySelector('.navigation__menu');
     this.navigationInner = document.querySelector('.navigation__inner')
     this.navigationItem = document.querySelectorAll('.navigation__item');
@@ -16,6 +17,7 @@ Blogr.prototype.showPage = function (el) {
         active: function () {
             document.body.classList.add('show');
             el.toggleMenu();
+            el.stickyNav();
         }
     });
 }
@@ -43,6 +45,15 @@ Blogr.prototype.toggleMenu = function () {
         self.desktopView = window.matchMedia('(min-width: 56.25em)').matches;
         removeStyle(self.navigationInner, self.desktopView);
     })
+}
+
+Blogr.prototype.stickyNav = function () {
+    var stickyNav = (function () {
+        if (window.pageYOffset > 100) this.navigation.classList.add('navigation--fixed');
+        else this.navigation.classList.remove('navigation--fixed');
+    }).bind(this);
+    stickyNav();
+    window.addEventListener('scroll', stickyNav);
 }
 
 var landingPage = new Blogr();
