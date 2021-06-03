@@ -12,7 +12,9 @@
     transition: .2s ease-in-out;
 
     &--fixed {
-        background: red;
+        background: rgba($very-dark-gray-blue, .9);
+        -webkit-backdrop-filter: blur(.6rem);
+        backdrop-filter: blur(.6rem);
         padding: 2rem 0;
         height: auto;
     }

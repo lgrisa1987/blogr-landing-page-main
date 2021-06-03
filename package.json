@@ -1,0 +1,25 @@
+{
+  "name": "blogr-landing-page-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "babel": "./node_modules/.bin/babel js/script.js -w -o js/script-compiled.js --source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgrisa1987/blogr-landing-page-main.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgrisa1987/blogr-landing-page-main/issues"
+  },
+  "homepage": "https://github.com/lgrisa1987/blogr-landing-page-main#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4"
+  }
+}
