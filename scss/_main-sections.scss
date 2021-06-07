@@ -24,16 +24,26 @@
         line-height: 2;
     }
 
+    &__img-mobile,
+    &__subheading {
+        margin-top: 5rem;
+    }
+
     &__img-mobile {
         max-width: 55rem;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
 
-        &--show {
+        &--2 {
             max-width: 40rem;
 
             img {
                 margin-top: -18rem;
             }
+        }
+
+        &--3 {
+            margin-top: 0;
         }
     }
 
@@ -42,10 +52,7 @@
         z-index: 1;
     }
 
-    &__img-mobile,
-    &__subheading {
-        margin-top: 5rem;
-    }
+
 
     &--2 {
         background: $very-dark-gray-blue;
@@ -55,7 +62,6 @@
         padding: 0 0 12rem;
         margin-top: 18rem;
         position: relative;
-        margin-bottom: 20rem;
         max-width: 100%;
 
         &::before {
@@ -100,7 +106,7 @@
 
         &--2 {
             padding: 0;
-            margin-top: 10rem;
+            margin: 10rem auto 20rem;
             max-height: 40rem;
 
             &::before {
@@ -112,14 +118,19 @@
         &__img-mobile {
             display: none;
 
-            &--show {
+            &--2 {
                 display: block;
                 max-width: 100%;
                 margin-right: 5rem;
 
                 img {
-                    margin-top: -10rem;
+                    margin-top: -6rem;
                     height: 54rem;
+                    max-width: initial;
+
+                    @include ie11 {
+                        max-width: inherit;
+                    }
                 }
             }
         }
