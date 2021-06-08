@@ -106,13 +106,19 @@
 
         &--2 {
             padding: 0;
-            margin: 10rem auto 20rem;
+            margin: 10rem auto 8rem;
             max-height: 40rem;
 
             &::before {
                 background-size: 80rem auto;
                 background-position: calc(50vw - 65rem) bottom;
             }
+        }
+
+        &--3 {
+            background: url(../images/illustration-laptop-desktop.svg) no-repeat;
+            background-position: -20rem center;
+            background-size: 70rem auto;
         }
 
         &__img-mobile {
@@ -129,19 +135,28 @@
                     max-width: initial;
 
                     @include ie11 {
+                        margin-top: -13.5rem;
                         max-width: inherit;
                     }
                 }
             }
         }
 
-        &__content--alt {
+        &__content--2 {
             @include d-flex(flex, center, center);
             max-height: 40rem;
         }
 
+        &__content--3 {
+            @include d-flex(flex, flex-end, center);
+        }
+
         &__heading {
-            font-size: 3.2rem;
+            font-size: 4rem;
+        }
+
+        &__subheading {
+            font-size: 3rem;
         }
 
         &__copy-container {
@@ -156,11 +171,23 @@
             background-position-x: calc(100vw - 65rem);
             background-size: 65rem auto;
         }
+
+        &--3 {
+            background-size: 75rem auto;
+        }
+
+        &__heading {
+            white-space: nowrap;
+        }
     }
 
     @include breakpoint(120em) {
         &--1 {
             background-position-x: right;
+        }
+
+        &--3 {
+            background-position-x: 10rem;
         }
     }
 
