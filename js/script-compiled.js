@@ -26,6 +26,8 @@ var Blogr = /*#__PURE__*/function () {
 
     _defineProperty(this, "navigationItem", this.selectAll('.navigation__item'));
 
+    _defineProperty(this, "pageAnchorLinks", this.selectAll('a'));
+
     this.showPage(this);
   }
 
@@ -48,9 +50,19 @@ var Blogr = /*#__PURE__*/function () {
         },
         active: function active() {
           document.body.classList.add('show');
+          el.preventDefaultBehaviour();
           el.toggleMenu();
           el.stickNav();
         }
+      });
+    }
+  }, {
+    key: "preventDefaultBehaviour",
+    value: function preventDefaultBehaviour() {
+      this.pageAnchorLinks.forEach(function (link) {
+        return link.addEventListener('click', function (e) {
+          return e.preventDefault();
+        });
       });
     }
   }, {

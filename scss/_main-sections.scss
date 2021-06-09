@@ -131,7 +131,7 @@
 
                 img {
                     margin-top: -6rem;
-                    height: 54rem;
+                    height: 44rem;
                     max-width: initial;
 
                     @include ie11 {
@@ -163,6 +163,14 @@
             text-align: left;
             width: 50%;
             padding-top: 3rem;
+        }
+    }
+
+    @include breakpoint(80em) {
+        &__img-mobile--2 {
+            img {
+                height: 54rem;
+            }
         }
     }
 

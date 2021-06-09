@@ -12,6 +12,7 @@ const Blogr = class {
     navigationMenu = this.select('.navigation__menu');
     navigationInner = this.select('.navigation__inner')
     navigationItem = this.selectAll('.navigation__item');
+    pageAnchorLinks = this.selectAll('a');
     constructor() {
         this.showPage(this);
     }
@@ -30,10 +31,14 @@ const Blogr = class {
             },
             active() {
                 document.body.classList.add('show');
+                el.preventDefaultBehaviour();
                 el.toggleMenu();
                 el.stickNav();
             }
         });
+    }
+    preventDefaultBehaviour() {
+        this.pageAnchorLinks.forEach(link => link.addEventListener('click', e => e.preventDefault()));
     }
     toggleMenu() {
         const navigationItems = Array.prototype.concat.call(this.navigationMenu, [].slice.call(this.navigationItem)),

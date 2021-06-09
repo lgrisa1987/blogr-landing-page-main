@@ -1,0 +1,55 @@
+.footer {
+    background-color: $very-dark-black-blue;
+    padding: 7rem 0;
+    text-align: center;
+    border-top-right-radius: 12rem;
+    color: $w;
+
+    &__list-item {
+        font-size: 1.7rem;
+        line-height: 2;
+
+        &--headline {
+            font-size: 1.8rem;
+            margin: 4rem 0 2rem;
+
+            a {
+                font-weight: 600;
+
+            }
+        }
+    }
+
+    @include breakpoint(37.500em) {
+        padding: 8rem 0;
+
+        &__nav {
+            @include d-flex(flex, space-around, flex-start);
+            text-align: left;
+        }
+    }
+
+    @include breakpoint(56.25em) {
+
+        &__inner-container {
+            @include d-flex(flex, space-between, flex-start);
+        }
+
+        &__nav {
+            -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
+        }
+
+        &__list-item {
+            a {
+                @extend .header__btn--outline;
+            }
+        }
+
+        &__list-item--headline {
+            margin-top: 0;
+        }
+
+    }
+
+}
